@@ -35,19 +35,22 @@ export default function Features() {
   return (
     <section id="tinh-nang" className="py-20 bg-[#0f1419]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-          Asaka Cloud có gì?
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 fade-in">
+          Zykl có gì?
         </h2>
-        <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+        <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto fade-in" style={{animationDelay: '0.2s'}}>
           Chúng tôi mang đến những ưu điểm vượt trội để đảm bảo trải nghiệm máy chủ tốt nhất cho bạn
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="p-6 rounded-lg border border-gray-800 hover:border-blue-600 transition bg-gradient-to-br from-[#1a1f2e] to-[#0f1419]">
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+            <div 
+              key={index} 
+              className="p-6 rounded-lg border border-gray-800 hover:border-blue-600 transition-all duration-400 bg-gradient-to-br from-[#1a1f2e] to-[#0f1419] hover:shadow-lg hover:shadow-blue-600/20 hover:scale-105 transform stagger-item group cursor-pointer"
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300">{feature.title}</h3>
+              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{feature.description}</p>
             </div>
           ))}
         </div>
